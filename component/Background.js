@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import BackgroundImg from '../image/background.png';
 const useStyles = makeStyles(theme => ({
   root: {
 
@@ -49,7 +50,7 @@ function Background() {
       // right
       ctx.drawImage(imageObj, 0, 0, 1000, 500, 1000 - offSet, 0, 1000, 500);
     }
-    imageObj.src = '../background.png';
+    imageObj.src = BackgroundImg;
   }
   // css
   const classes = useStyles();

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Motion, spring} from 'react-motion';
+import CharacterImg from '../image/character.png';
 const useStyles = makeStyles(theme => ({
   root: {
 
@@ -69,7 +70,7 @@ const Character = () => {
     <div>
       <Motion style={{top:spring(top)}}>
         {
-          ({}) => <img id="character" src = '../character.png' className={classes.character} style={{top}}/>
+          ({}) => <img id="character" src = {CharacterImg} className={classes.character} style={{top}}/>
         }
       </Motion>
     </div>

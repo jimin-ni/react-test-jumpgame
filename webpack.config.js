@@ -31,6 +31,12 @@ module.exports = {
         {
             test : /\.(css)$/,
             use:['style-loader','css-loader']
+        },
+        {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: [
+                'file-loader',
+            ],
         }
     ]
     },
@@ -40,7 +46,7 @@ module.exports = {
     output: {
         path: path.join(__dirname,'./public'),
         filename: 'app.js',
-        publicPath: '/public/',
+        publicPath: 'public/',
 
     }
 }

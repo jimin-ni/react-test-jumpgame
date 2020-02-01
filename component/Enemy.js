@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Motion, spring } from 'react-motion';
+import EnemyImg from '../image/enemy.png';
 const useStyles = makeStyles(theme => ({
   root: {
 
@@ -63,7 +64,7 @@ const Enemy = (props) => {
         isMoving ?
           <Motion style={{ left: spring(left) }}>
             {
-              ({ }) => <img id="enemy" src='../enemy.png' className={classes.character} style={{ left }} />
+              ({ }) => <img id="enemy" src={EnemyImg} className={classes.character} style={{ left }} />
             }
           </Motion>
           : null
