@@ -41,7 +41,7 @@ const Main = () => {
 	useEffect(() => {
 		if (isStart) {
 			interval.current = setInterval(() => {
-				if (Math.floor(time)%2 ==1){
+				if (Math.floor(time)%3 ==2){
 					setIsMove(true);
 				}else{
 					setIsMove(false);

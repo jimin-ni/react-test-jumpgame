@@ -46,9 +46,9 @@ function Background() {
     let imageObj = new Image();
     imageObj.onload = function () {
       // left
-      ctx.drawImage(imageObj, 0, 0, 1000, 500, -offSet, 0, 1000, 500);
+      ctx.drawImage(imageObj, offSet, 0, 1000-offSet, 500, 0, 0, 1000-offSet, 500);
       // right
-      ctx.drawImage(imageObj, 0, 0, 1000, 500, 1000 - offSet, 0, 1000, 500);
+      ctx.drawImage(imageObj, 0, 0, offSet, 500, 1000 - offSet, 0, offSet, 500);
     }
     imageObj.src = BackgroundImg;
   }

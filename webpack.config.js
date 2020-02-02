@@ -11,34 +11,44 @@ module.exports = {
         app: ['./client'],
     },
     module: {
-        rules: [{
-            test: /\.jsx?/,
-            loader: 'babel-loader',
-            options:{
-                presets: [
-                    ['@babel/preset-env',{
-                    targets:{
-                        browsers: ['> 5% in KR']
+        rules: [
+            {
+                test: /\.jsx?/,
+                use:{
+                    loader: 'babel-loader',
+                    options:{
+                        presets: [
+                            ['@babel/preset-env',{
+                            targets:{
+                                browsers: ['> 5% in KR']
+                            },
+                            debug: true,
+                        }], '@babel/preset-react'],
+                        plugins: [
+                            '@babel/plugin-proposal-class-properties',
+                            'react-hot-loader/babel'
+                        ],
+                    }
+                }
+            },
+            {
+                test : /\.(css)$/,
+                use:[
+                    {
+                        loader:'style-loader'
                     },
-                    debug: true,
-                }], '@babel/preset-react'],
-                plugins: [
-                    '@babel/plugin-proposal-class-properties',
-                    'react-hot-loader/babel'
-                ],
+                    {
+                        loader:'css-loader'
+                    },
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: {
+                    loader : 'file-loader'
+                }
             }
-        },
-        {
-            test : /\.(css)$/,
-            use:['style-loader','css-loader']
-        },
-        {
-            test: /\.(png|svg|jpg|gif)$/,
-            use: [
-                'file-loader',
-            ],
-        }
-    ]
+        ]
     },
     plugins: [
         new webpack.LoaderOptionsPlugin({debug: true}),
@@ -46,7 +56,7 @@ module.exports = {
     output: {
         path: path.join(__dirname,'./public'),
         filename: 'app.js',
-        publicPath: 'public/',
+        publicPath: '/',
 
     }
 }
