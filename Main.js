@@ -96,7 +96,7 @@ const Main = () => {
 						<Button onClick={handleClickStartButton} className={classes.button}>
 							Your Highest Record is {Math.floor(result)}s
 							<br/>
-							Click to Start Game!!
+							Click to Start Game!
 						</Button>
 					</div>
 			}
