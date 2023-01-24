@@ -1,10 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import BackgroundImg from '../image/background.png';
+import BackgroundImg from '../image/my_background_test.png';
 const useStyles = makeStyles(theme => ({
-  root: {
-
-  },
+  root: { },
   background: {
     border: '1px solid black',
     margin: '50px 0 0 50px',
@@ -13,7 +11,7 @@ const useStyles = makeStyles(theme => ({
 }))
 function Background() {
   // init
-  const updateTime = 20;
+  const updateTime = 30;  //게임종료시간이 아님.. 뭐지
   const speed = 5;
   const interval = useRef();
   // State
