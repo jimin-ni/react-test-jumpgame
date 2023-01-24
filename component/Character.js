@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import CharacterImg from '../image/my_background_test';
+import CharacterImg from '../image/character.png';
 const useStyles = makeStyles(theme => ({
   root: {
 

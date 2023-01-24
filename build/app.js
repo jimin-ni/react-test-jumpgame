@@ -189,7 +189,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"af2541b9f608e6a8899be709f349459a.png\");\n\n//# sourceURL=webpack:///./image/enemy.png?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (__webpack_require__.p + \"../image/my_item_test.png\");\n\n//# sourceURL=webpack:///./image/enemy.png?");
 
 /***/ }),
 
