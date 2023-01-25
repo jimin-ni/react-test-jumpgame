@@ -1,6 +1,8 @@
+// 기존 enemy.js파일을 복사함. 아이템item 탭으로 이용하고싶음.
+
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import EnemyImg from '../image/my_item_test.png';
+import EnemyImg from '../image/my_item_test2.png';
 const useStyles = makeStyles(theme => ({
   root: {
 

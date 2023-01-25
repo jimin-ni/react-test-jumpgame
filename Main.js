@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Chracter from './component/Character';
 import Background from './component/Background';
 import Enemy from './component/Enemy';
+import Item from './component/Item';
+
 import { makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(() => ({
@@ -60,7 +62,7 @@ const Main = () => {
 	const handleClickStartButton = () => {
 		setIsStart(true);
 	}
-	// 충돌 체크하고 충돌이면 게임을 종료
+	// enemy와 충돌 체크하고 충돌이면 게임을 종료
 	const checkConflict = () => {
 		let enemy = document.querySelector('img#enemy');
 		let character = document.querySelector('img#character');
@@ -76,6 +78,25 @@ const Main = () => {
 			}
 		}
 	}
+
+	// Item과 충돌 체크하고 충돌이면 score변수 추가 
+	//const checkConflict = () => {
+		let item = document.querySelector('img#item');
+		let character = document.querySelector('img#character');
+		if (item !== null && character !== null) {
+			let dis = Math.pow(item.x - character.x, 2) + Math.pow(item.y - character.y, 2)
+			if (dis < 3000) {
+				alert("*****GET ITEM*****");
+				if (result<time){
+					setResult(time);
+				}
+				setIsStart(false);
+				setTime(0);
+			}
+		}
+	}
+
+
 	// 시작한 경우 게임 컴포넌트를 렌더링
 	return (
 		<div >
@@ -86,7 +107,7 @@ const Main = () => {
 						<Chracter />
 						<Enemy isMove={isMove}/>
 						<div className={classes.timer}>
-							<div >React Web Game!!</div>
+							<div>React Web Game!!</div> 
 							<div style={{ margin: "0 0 0 50px" }}> Time : </div>
 							<div style={{ margin: "0 0 0 10px" }}>{Math.floor(time)}s</div>
 						</div>
@@ -100,7 +121,7 @@ const Main = () => {
 						</Button>
 					</div>
 			}
-		</div>
+		</div>// 바로 위의 부분이 화면 클릭하면 사라지지만 시작하는 문구. 
 	)
-}
+
 export default Main;
