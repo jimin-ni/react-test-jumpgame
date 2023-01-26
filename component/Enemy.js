@@ -25,12 +25,12 @@ const Enemy = (props) => {
   // props.isMove가 변하면 props.isMove를 isMove에 저장
   useEffect(()=>{
     //setIsMove(props.isMove);
-    if (props.isMove) {
+    if (props.isEnemyMove) {
       setIsMoving(true);
       setLeft(initLeft);
       move();
     }
-  },[props.isMove])
+  },[props.isEnemyMove])
   // 컴포넌트가 Unmount되면 timeout을 모두 삭제
   useEffect(()=>{
     return () => {

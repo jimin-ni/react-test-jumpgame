@@ -1,6 +1,7 @@
 {
   "name": "react-app",
   "version": "1.0.0",
+  "proxy":"https://ggg-server.herokuapp.com/",
   "description": "",
   "main": "index.js",
   "scripts": {

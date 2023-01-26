@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import EnemyImg from '../image/my_item_test2.png';
+import ItemImg from '../image/my_item_test_2.png';
 const useStyles = makeStyles(theme => ({
   root: {
 
@@ -10,11 +10,11 @@ const useStyles = makeStyles(theme => ({
   character: {
     position: 'absolute',
     width: '80px',
-    height: '80px',
-    top: '410px'
+    height: '100px',
+    top: '610px'
   },
 }))
-const Enemy = (props) => {
+const Item = (props) => {
   // init
   const updateTime = 20;
   const initLeft = 1000 - 20;
@@ -27,12 +27,12 @@ const Enemy = (props) => {
   // props.isMove가 변하면 props.isMove를 isMove에 저장
   useEffect(()=>{
     //setIsMove(props.isMove);
-    if (props.isMove) {
+    if (props.isItemMove) {
       setIsMoving(true);
       setLeft(initLeft);
       move();
     }
-  },[props.isMove])
+  },[props.isItemMove])
   // 컴포넌트가 Unmount되면 timeout을 모두 삭제
   useEffect(()=>{
     return () => {
@@ -59,10 +59,10 @@ const Enemy = (props) => {
     <div>
       {
         isMoving ?
-          <img id="enemy" src={EnemyImg} className={classes.character} style={{ left:left }}></img>
+          <img id="Item" src={ItemImg} className={classes.character} style={{ left:left }}></img>
           : null
       }
     </div>
   )
 }
-export default Enemy;
+export default Item;

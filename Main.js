@@ -35,7 +35,8 @@ const Main = () => {
 	const [isStart, setIsStart] = useState(false);
 	const [time, setTime] = useState(0);
 	const [result, setResult] = useState(0);
-	const [isMove, setIsMove] = useState(false);
+	const [isEnemyMove, setIsEnemyMove] = useState(false);
+	const [isItemMove, setIsItemMove] = useState(false);
 	// 특정 시간을 주기로
 	// 1. Enemy에게 props로 보내는 state를 true 또는 false로 수정
 	// 2. 시간을 체크
@@ -44,12 +45,15 @@ const Main = () => {
 		if (isStart) {
 			interval.current = setInterval(() => {
 				if (Math.floor(time)%3 ==2){
-					setIsMove(true);
+					isEnemyMove(true);
+					isItemMove(true);
 				}else{
-					setIsMove(false);
+					setIsEnemyMove(false);
+					setIsItemMove(false);
 				}
 				setTime(time + updateTime * 0.001);
-				checkConflict();
+				//checkConflict(); //주석처리하면, 캐릭터와 충돌 알람x
+				checkItem();
 			}, updateTime)
 		}
 		return () => {
@@ -79,8 +83,8 @@ const Main = () => {
 		}
 	}
 
-	// Item과 충돌 체크하고 충돌이면 score변수 추가 
-	//const checkConflict = () => {
+	//Item과 충돌 체크하고 충돌이면 score변수 추가 
+	const checkItem = () => {
 		let item = document.querySelector('img#item');
 		let character = document.querySelector('img#character');
 		if (item !== null && character !== null) {
@@ -105,7 +109,8 @@ const Main = () => {
 					<div>
 						<Background />
 						<Chracter />
-						<Enemy isMove={isMove}/>
+						<Enemy isMove={isEnemyMove}/>
+						<Item isMove={isItemMove}/>
 						<div className={classes.timer}>
 							<div>React Web Game!!</div> 
 							<div style={{ margin: "0 0 0 50px" }}> Time : </div>
@@ -123,5 +128,5 @@ const Main = () => {
 			}
 		</div>// 바로 위의 부분이 화면 클릭하면 사라지지만 시작하는 문구. 
 	)
-
+}
 export default Main;
