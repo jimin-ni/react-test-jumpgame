@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import EnemyImg from '../image/my_item_test2.png';
+import ItemImg from '../image/my_item_test2.png';
 const useStyles = makeStyles(theme => ({
   root: {
 
@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     top: '410px'
   },
 }))
-const Enemy = (props) => {
+const Item = (props) => {
   // init
   const updateTime = 20;
   const initLeft = 1000 - 20;
@@ -59,10 +59,10 @@ const Enemy = (props) => {
     <div>
       {
         isMoving ?
-          <img id="enemy" src={EnemyImg} className={classes.character} style={{ left:left }}></img>
+          <img id="Item" src={ItemImg} className={classes.character} style={{ left:left }}></img>
           : null
       }
     </div>
   )
 }
-export default Enemy;
+export default Item;
